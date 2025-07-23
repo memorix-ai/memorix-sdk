@@ -43,9 +43,12 @@ plugins:
 nav:
   - Home: index.md
   - Getting Started:
-    - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quickstart.md
-    - Configuration: getting-started/configuration.md
+    - Installation: docs/install.md
+    - Quick Reference: docs/quick_reference.md
+    - Usage Guide: docs/usage.md
+  - Architecture & Design:
+    - Architecture: docs/architecture.md
+    - Vision: docs/vision.md
   - API Reference:
     - MemoryAPI: api/memory_api.md
     - Config: api/config.md
@@ -61,9 +64,11 @@ nav:
     - Basic Usage: examples/basic_usage.md
     - Advanced Usage: examples/advanced_usage.md
   - Contributing:
-    - Contributing Guide: contributing/contributing.md
+    - Contributing Guide: docs/contributing.md
     - Development Setup: contributing/development.md
     - Code Style: contributing/code_style.md
+  - Project:
+    - Changelog: docs/changelog.md
 
 markdown_extensions:
   - admonition

@@ -246,4 +246,4 @@ Thank you to all contributors who have helped make Memorix SDK better!
 
 ---
 
-For more information, see our [README](README.md) and [Documentation](https://docs.memorix.ai). 
+For more information, see our [README](../README.md) and [Documentation](https://docs.memorix.ai). 

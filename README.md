@@ -193,7 +193,7 @@ python examples/basic_usage.py
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guide](docs/CONTRIBUTING.md) for details.
 
 1. Fork the repository
 2. Create a feature branch
@@ -217,6 +217,15 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 - [ ] Add memory search filters
 - [ ] Add memory export/import
 - [ ] Add memory analytics and insights
+
+## 📚 Documentation
+
+- 📖 **[Installation Guide](docs/INSTALL.md)** - Complete setup instructions
+- 🚀 **[Usage Guide](docs/USAGE.md)** - Comprehensive usage examples
+- 🏗️ **[Architecture](docs/ARCHITECTURE.md)** - System design and components
+- 🎯 **[Vision](docs/VISION.md)** - Project vision and roadmap
+- 📋 **[Quick Reference](docs/QUICK_REFERENCE.md)** - Essential commands and patterns
+- 📝 **[Changelog](docs/CHANGELOG.md)** - Version history and changes
 
 ## 📞 Support
 
