@@ -61,30 +61,30 @@ graph TB
 ```mermaid
 graph LR
     subgraph "MemoryAPI"
-        STORE[store()]
-        RETRIEVE[retrieve()]
-        UPDATE[update()]
-        DELETE[delete()]
-        LIST[list_memories()]
+        STORE["store()"]
+        RETRIEVE["retrieve()"]
+        UPDATE["update()"]
+        DELETE["delete()"]
+        LIST["list_memories()"]
     end
     
     subgraph "VectorStore"
-        VS_STORE[store()]
-        VS_SEARCH[search()]
-        VS_DELETE[delete()]
-        VS_UPDATE[update()]
+        VS_STORE["store()"]
+        VS_SEARCH["search()"]
+        VS_DELETE["delete()"]
+        VS_UPDATE["update()"]
     end
     
     subgraph "Embedder"
-        EMB_EMBED[embed()]
-        EMB_BATCH[embed_batch()]
+        EMB_EMBED["embed()"]
+        EMB_BATCH["embed_batch()"]
     end
     
     subgraph "MetadataStore"
-        MS_STORE[store()]
-        MS_GET[get()]
-        MS_UPDATE[update()]
-        MS_DELETE[delete()]
+        MS_STORE["store()"]
+        MS_GET["get()"]
+        MS_UPDATE["update()"]
+        MS_DELETE["delete()"]
     end
     
     STORE --> VS_STORE
