@@ -143,10 +143,10 @@ graph TD
     end
     
     subgraph "Config Manager"
-        LOAD[load_config()]
-        VALIDATE[validate()]
-        GET[get()]
-        SET[set()]
+        LOAD["load_config()"]
+        VALIDATE["validate()"]
+        GET["get()"]
+        SET["set()"]
     end
     
     subgraph "Component Factories"
