@@ -3,7 +3,8 @@ Tests for Memorix SDK Memory API.
 """
 
 import unittest
-from memorix import MemoryAPI, Config
+
+from memorix import Config, MemoryAPI
 
 
 class TestMemoryAPI(unittest.TestCase):

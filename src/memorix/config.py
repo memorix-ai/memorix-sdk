@@ -2,9 +2,10 @@
 YAML-based configuration loader for Memorix SDK.
 """
 
-import yaml
-from typing import Dict, Any, Optional
 from pathlib import Path
+from typing import Any, Dict, Optional
+
+import yaml
 
 
 class Config:

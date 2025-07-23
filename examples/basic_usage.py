@@ -2,7 +2,7 @@
 Basic usage example for Memorix AI.
 """
 
-from memorix import MemoryAPI, Config
+from memorix import Config, MemoryAPI
 
 
 def main():

@@ -2,14 +2,14 @@
 Optional metadata handling for Memorix SDK.
 """
 
-from typing import Dict, Any, Optional, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Dict, Optional
 
 if TYPE_CHECKING:
     from .config import Config
 
-from abc import ABC, abstractmethod
 import json
 import sqlite3
+from abc import ABC, abstractmethod
 from pathlib import Path
 
 

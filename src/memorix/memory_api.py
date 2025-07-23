@@ -2,14 +2,14 @@
 Main memory interface for the Memorix SDK.
 """
 
-from typing import List, Dict, Any, Optional
 import uuid
 from datetime import datetime
+from typing import Any, Dict, List, Optional
 
 from .config import Config
-from .vector_store import VectorStore
 from .embedder import Embedder
 from .metadata_store import MetadataStore
+from .vector_store import VectorStore
 
 
 class MemoryAPI:
