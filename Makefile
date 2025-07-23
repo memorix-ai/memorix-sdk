@@ -30,19 +30,19 @@ test:
 
 # Run tests with coverage
 test-cov:
-	pytest tests/ -v --cov=memorix --cov-report=html --cov-report=term-missing
+	pytest tests/ -v --cov=src/memorix --cov-report=html --cov-report=term-missing
 
 # Run linting checks
 lint:
-	flake8 memorix/ tests/ examples/
-	mypy memorix/
-	black --check --diff memorix/ tests/ examples/
-	isort --check-only --diff memorix/ tests/ examples/
+	flake8 src/memorix/ tests/ examples/
+	mypy src/memorix/
+	black --check --diff src/memorix/ tests/ examples/
+	isort --check-only --diff src/memorix/ tests/ examples/
 
 # Format code
 format:
-	black memorix/ tests/ examples/
-	isort memorix/ tests/ examples/
+	black src/memorix/ tests/ examples/
+	isort src/memorix/ tests/ examples/
 
 # Clean build artifacts
 clean:

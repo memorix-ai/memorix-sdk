@@ -47,8 +47,8 @@ Thank you for your interest in contributing to Memorix SDK! This document provid
 
 ```bash
 # Clone the repository
-git clone https://github.com/memorix-ai/memorix-sdk.git
-cd memorix-sdk
+git clone https://github.com/memorix-ai/memorix-ai.git
+cd memorix-ai
 
 # Create a virtual environment
 python -m venv venv
@@ -133,7 +133,7 @@ pre-commit run --all-files
 ## 🏗️ Project Structure
 
 ```
-memorix-sdk/
+memorix-ai/
 ├── memorix/                 # Core package
 │   ├── __init__.py         # Package exports
 │   ├── memory_api.py       # Main API

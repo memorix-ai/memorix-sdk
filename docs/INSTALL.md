@@ -3,7 +3,7 @@
 ## Quick Install
 
 ```bash
-pip install memorix-sdk
+pip install memorix-ai
 ```
 
 ## Prerequisites
@@ -18,15 +18,15 @@ pip install memorix-sdk
 
 ```bash
 # Install core package
-pip install memorix-sdk
+pip install memorix-ai
 ```
 
 ### 🔧 Development Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/memorix-ai/memorix-sdk.git
-cd memorix-sdk
+git clone https://github.com/memorix-ai/memorix-ai.git
+cd memorix-ai
 
 # Install in development mode
 pip install -e ".[dev]"
@@ -39,13 +39,13 @@ pre-commit install
 
 ```bash
 # Install with specific backends
-pip install "memorix-sdk[openai]"      # OpenAI embeddings
-pip install "memorix-sdk[gemini]"      # Google Gemini embeddings
-pip install "memorix-sdk[faiss]"       # FAISS vector store
-pip install "memorix-sdk[qdrant]"      # Qdrant vector store
+pip install "memorix-ai[openai]"      # OpenAI embeddings
+pip install "memorix-ai[gemini]"      # Google Gemini embeddings
+pip install "memorix-ai[faiss]"       # FAISS vector store
+pip install "memorix-ai[qdrant]"      # Qdrant vector store
 
 # Install all optional dependencies
-pip install "memorix-sdk[all]"
+pip install "memorix-ai[all]"
 ```
 
 ## Environment Setup
@@ -104,8 +104,8 @@ sudo apt install python3 python3-pip python3-venv
 python3 -m venv memorix-env
 source memorix-env/bin/activate
 
-# Install Memorix SDK
-pip install memorix-sdk
+# Install Memorix AI
+pip install memorix-ai
 ```
 
 ### 🍎 macOS
@@ -118,8 +118,8 @@ brew install python3
 python3 -m venv memorix-env
 source memorix-env/bin/activate
 
-# Install Memorix SDK
-pip install memorix-sdk
+# Install Memorix AI
+pip install memorix-ai
 ```
 
 ### 🪟 Windows
@@ -129,8 +129,8 @@ pip install memorix-sdk
 python -m venv memorix-env
 memorix-env\Scripts\Activate.ps1
 
-# Install Memorix SDK
-pip install memorix-sdk
+# Install Memorix AI
+pip install memorix-ai
 ```
 
 ### 🐳 Docker
@@ -146,8 +146,8 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Memorix SDK
-RUN pip install memorix-sdk
+# Install Memorix AI
+RUN pip install memorix-ai
 
 # Copy your application
 COPY . .
@@ -245,7 +245,7 @@ print(f"Found {len(results)} memories")
 
 ```bash
 # Check installed version
-pip show memorix-sdk
+pip show memorix-ai
 
 # Run tests (if installed in dev mode)
 python -m pytest tests/ -v
@@ -311,11 +311,11 @@ embeddings = embedder.embed_batch(texts)
 1. **Read the [Quick Start Guide](../README.md#quick-start)**
 2. **Explore [Examples](../examples/)**
 3. **Check [Configuration Options](../memorix.yaml)**
-4. **Join the [Community](https://github.com/memorix-ai/memorix-sdk/discussions)**
+4. **Join the [Community](https://github.com/memorix-ai/memorix-ai/discussions)**
 
 ## Support
 
 - 📚 **Documentation**: [docs.memorix.ai](https://docs.memorix.ai)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/memorix-ai/memorix-sdk/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/memorix-ai/memorix-sdk/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/memorix-ai/memorix-ai/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/memorix-ai/memorix-ai/discussions)
 - 📧 **Email**: support@memorix.ai 

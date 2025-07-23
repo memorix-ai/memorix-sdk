@@ -1,10 +1,10 @@
-# 🧠 Memorix SDK
+# 🧠 Memorix AI
 
-[![PyPI version](https://badge.fury.io/py/memorix-sdk.svg)](https://badge.fury.io/py/memorix-sdk)
-[![Python versions](https://img.shields.io/pypi/pyversions/memorix-sdk.svg)](https://pypi.org/project/memorix-sdk/)
+[![PyPI version](https://badge.fury.io/py/memorix-ai.svg)](https://badge.fury.io/py/memorix-ai)
+[![Python versions](https://img.shields.io/pypi/pyversions/memorix-ai.svg)](https://pypi.org/project/memorix-ai/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![CI](https://github.com/memorix-ai/memorix-sdk/workflows/CI/badge.svg)](https://github.com/memorix-ai/memorix-sdk/actions)
-[![Codecov](https://codecov.io/gh/memorix-ai/memorix-sdk/branch/main/graph/badge.svg)](https://codecov.io/gh/memorix-ai/memorix-sdk)
+[![CI](https://github.com/memorix-ai/memorix-ai/workflows/CI/badge.svg)](https://github.com/memorix-ai/memorix-ai/actions)
+[![Codecov](https://codecov.io/gh/memorix-ai/memorix-ai/branch/main/graph/badge.svg)](https://codecov.io/gh/memorix-ai/memorix-ai)
 
 > **A flexible memory management system for AI applications** with plug-in support for various vector stores and embedding models.
 
@@ -23,7 +23,7 @@
 ### Installation
 
 ```bash
-pip install memorix-sdk
+pip install memorix-ai
 ```
 
 ### Basic Usage

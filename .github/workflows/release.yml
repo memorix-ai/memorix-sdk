@@ -50,7 +50,7 @@ jobs:
           ## Installation
           
           ```bash
-          pip install memorix-sdk==${{ github.ref_name }}
+          pip install memorix-ai==${{ github.ref_name }}
           ```
           
           ## Documentation

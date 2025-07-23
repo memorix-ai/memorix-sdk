@@ -47,8 +47,8 @@ results = memory.retrieve("Hello")
 ## 📞 Support
 
 - **Documentation**: [docs.memorix.ai](https://docs.memorix.ai)
-- **Issues**: [GitHub Issues](https://github.com/memorix-ai/memorix-sdk/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/memorix-ai/memorix-sdk/discussions)
+- **Issues**: [GitHub Issues](https://github.com/memorix-ai/memorix-ai/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/memorix-ai/memorix-ai/discussions)
 - **Email**: support@memorix.ai
 
 ---

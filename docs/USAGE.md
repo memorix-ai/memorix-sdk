@@ -461,4 +461,4 @@ memory.retrieve = monitor_memory_operations(memory.retrieve)
 1. **Explore [Examples](../examples/) for more use cases**
 2. **Check [Configuration Options](../memorix.yaml) for advanced setup**
 3. **Read [Architecture Documentation](ARCHITECTURE.md) for deep dive**
-4. **Join [Community Discussions](https://github.com/memorix-ai/memorix-sdk/discussions)** 
+4. **Join [Community Discussions](https://github.com/memorix-ai/memorix-ai/discussions)** 

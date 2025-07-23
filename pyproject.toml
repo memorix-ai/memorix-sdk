@@ -1,36 +1,19 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "memorix-sdk"
+name = "memorix-ai"
 version = "0.1.0"
-description = "A flexible memory management system for AI applications"
+description = "The memory layer for AI agents"
+authors = [{ name = "Memorix AI", email = "founder@memorix.ai" }]
+license = "Apache-2.0"
 readme = "README.md"
-license = {text = "MIT"}
-authors = [
-    {name = "Memorix Team", email = "team@memorix.ai"}
-]
-maintainers = [
-    {name = "Memorix Team", email = "team@memorix.ai"}
-]
-keywords = ["memory", "vector-store", "embeddings", "ai", "machine-learning"]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-]
 requires-python = ">=3.8"
 dependencies = [
+    "faiss-cpu",
+    "pydantic>=2.0",
+    "openai",
     "numpy>=1.21.0",
     "pyyaml>=6.0",
 ]
@@ -54,29 +37,22 @@ sentence-transformers = [
     "sentence-transformers>=2.0.0",
     "torch>=1.9.0",
 ]
-faiss = [
-    "faiss-cpu>=1.7.0",
-]
 qdrant = [
     "qdrant-client>=1.0.0",
 ]
 all = [
-    "memorix-sdk[openai,gemini,sentence-transformers,faiss,qdrant]",
+    "memorix-ai[openai,gemini,sentence-transformers,qdrant]",
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/memorix-sdk"
+Homepage = "https://github.com/memorix-ai/memorix-ai"
 Documentation = "https://docs.memorix.ai"
-Repository = "https://github.com/your-org/memorix-sdk.git"
-"Bug Tracker" = "https://github.com/your-org/memorix-sdk/issues"
-"Discussions" = "https://github.com/your-org/memorix-sdk/discussions"
-
-[project.scripts]
-memorix = "memorix.cli:main"
+Repository = "https://github.com/memorix-ai/memorix-ai.git"
+"Bug Tracker" = "https://github.com/memorix-ai/memorix-ai/issues"
+"Discussions" = "https://github.com/memorix-ai/memorix-ai/discussions"
 
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["memorix*"]
+where = ["src"]
 
 [tool.setuptools.package-data]
 memorix = ["*.yaml", "*.yml"]
@@ -138,7 +114,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["memorix"]
+source = ["src/memorix"]
 omit = [
     "*/tests/*",
     "*/test_*",

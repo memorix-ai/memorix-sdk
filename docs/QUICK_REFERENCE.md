@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-pip install memorix-sdk
+pip install memorix-ai
 ```
 
 ## Basic Usage
@@ -147,6 +147,6 @@ except Exception as e:
 ## Support
 
 - 📚 [Documentation](https://docs.memorix.ai)
-- 🐛 [Issues](https://github.com/memorix-ai/memorix-sdk/issues)
-- 💬 [Discussions](https://github.com/memorix-ai/memorix-sdk/discussions)
+- 🐛 [Issues](https://github.com/memorix-ai/memorix-ai/issues)
+- 💬 [Discussions](https://github.com/memorix-ai/memorix-ai/discussions)
 - �� support@memorix.ai 

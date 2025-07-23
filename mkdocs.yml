@@ -35,7 +35,7 @@ plugins:
       default_handler: python
       handlers:
         python:
-          paths: [../memorix]
+          paths: [../src/memorix]
           options:
             show_source: true
             show_root_heading: true

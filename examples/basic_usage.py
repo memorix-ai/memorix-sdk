@@ -1,12 +1,12 @@
 """
-Basic usage example for Memorix SDK.
+Basic usage example for Memorix AI.
 """
 
 from memorix import MemoryAPI, Config
 
 
 def main():
-    """Demonstrate basic usage of Memorix SDK."""
+    """Demonstrate basic usage of Memorix AI."""
     
     # Initialize configuration
     config = Config()
