@@ -11,10 +11,4 @@ from .vector_store import VectorStore
 from .embedder import Embedder
 from .metadata_store import MetadataStore
 
-__all__ = [
-    "MemoryAPI",
-    "Config", 
-    "VectorStore",
-    "Embedder",
-    "MetadataStore"
-] 
+__all__ = ["MemoryAPI", "Config", "VectorStore", "Embedder", "MetadataStore"]
