@@ -1,22 +1,32 @@
-# Memorix SDK
+# 🧠 Memorix SDK
 
-A flexible memory management system for AI applications with plug-in support for various vector stores and embedding models.
+[![PyPI version](https://badge.fury.io/py/memorix-sdk.svg)](https://badge.fury.io/py/memorix-sdk)
+[![Python versions](https://img.shields.io/pypi/pyversions/memorix-sdk.svg)](https://pypi.org/project/memorix-sdk/)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![CI](https://github.com/memorix-ai/memorix-sdk/workflows/CI/badge.svg)](https://github.com/memorix-ai/memorix-sdk/actions)
+[![Codecov](https://codecov.io/gh/memorix-ai/memorix-sdk/branch/main/graph/badge.svg)](https://codecov.io/gh/memorix-ai/memorix-sdk)
 
-## Features
+> **A flexible memory management system for AI applications** with plug-in support for various vector stores and embedding models.
 
-- **Flexible Vector Stores**: Support for FAISS, Qdrant, and more
-- **Multiple Embedding Models**: OpenAI, Google Gemini, Sentence Transformers
-- **Metadata Management**: Optional metadata storage with multiple backends
-- **YAML Configuration**: Easy configuration management
-- **Simple API**: Clean and intuitive interface
+## ✨ Features
 
-## Installation
+- 🗄️ **Flexible Vector Stores**: FAISS, Qdrant, and custom implementations
+- 🤖 **Multiple Embedding Models**: OpenAI, Google Gemini, Sentence Transformers
+- 📊 **Metadata Management**: Optional metadata storage with multiple backends
+- ⚙️ **YAML Configuration**: Easy configuration management
+- 🚀 **Simple API**: Clean and intuitive interface
+- 🧪 **Comprehensive Testing**: Full test coverage and CI/CD
+- 📚 **Rich Documentation**: API docs, examples, and guides
+
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
 pip install memorix-sdk
 ```
 
-## Quick Start
+### Basic Usage
 
 ```python
 from memorix import MemoryAPI, Config
@@ -35,11 +45,11 @@ memory_id = memory.store(
 results = memory.retrieve("programming languages", top_k=5)
 for result in results:
     print(f"Content: {result['content']}")
-    print(f"Similarity: {result['similarity']}")
+    print(f"Similarity: {result['similarity']:.3f}")
     print(f"Metadata: {result['metadata']}")
 ```
 
-## Configuration
+## ⚙️ Configuration
 
 Create a `memorix.yaml` file:
 
@@ -63,10 +73,10 @@ settings:
   similarity_threshold: 0.7
 ```
 
-## Supported Components
+## 🔌 Supported Components
 
 ### Vector Stores
-- **FAISS**: Fast similarity search
+- **FAISS**: Fast similarity search with CPU/GPU support
 - **Qdrant**: Vector database with advanced features
 - **Custom**: Implement your own vector store
 
@@ -80,40 +90,93 @@ settings:
 - **In-Memory**: Fast temporary storage
 - **JSON File**: Simple file-based storage
 
-## API Reference
+## 📖 API Reference
 
 ### MemoryAPI
 
-#### `store(content, metadata=None)`
-Store content with optional metadata.
+| Method | Description |
+|--------|-------------|
+| `store(content, metadata=None)` | Store content with optional metadata |
+| `retrieve(query, top_k=5)` | Retrieve relevant memories based on query |
+| `update(memory_id, content, metadata=None)` | Update an existing memory |
+| `delete(memory_id)` | Delete a memory by ID |
+| `list_memories(limit=100)` | List all memories with basic info |
 
-#### `retrieve(query, top_k=5)`
-Retrieve relevant memories based on query.
+## 🎯 Examples
 
-#### `update(memory_id, content, metadata=None)`
-Update an existing memory.
+### Core Examples
 
-#### `delete(memory_id)`
-Delete a memory by ID.
-
-#### `list_memories(limit=100)`
-List all memories with basic info.
-
-## Examples
-
-See the `examples/` directory for usage examples:
+See the `examples/` directory for basic usage examples:
 
 - `basic_usage.py`: Minimal usage example
-- More examples coming soon...
 
-## Development
+### 🚀 Comprehensive Examples & Demos
+
+For comprehensive examples, interactive demos, and real-world applications, check out our dedicated examples repository:
+
+**[📚 Memorix Examples Repository](https://github.com/memorix-ai/memorix-examples)**
+
+#### Featured Demos:
+- **[Basic Usage Demo](https://github.com/memorix-ai/memorix-examples/tree/main/demos/01_basic_usage.py)** - Get started in 5 minutes
+- **[Chatbot with Memory](https://github.com/memorix-ai/memorix-examples/tree/main/demos/02_chatbot_memory.py)** - Build conversational AI with persistent memory
+- **[Vector Store Comparison](https://github.com/memorix-ai/memorix-examples/tree/main/demos/04_vector_store_comparison.py)** - Compare FAISS vs Qdrant performance
+
+#### Interactive Applications:
+- **[Streamlit Web App](https://github.com/memorix-ai/memorix-examples/tree/main/streamlit_app/)** - Interactive memory management interface
+- **[Gradio Demo](https://github.com/memorix-ai/memorix-examples/tree/main/gradio_app/)** - Quick prototyping interface
+
+#### Ready-to-Use Templates:
+- **[Chatbot Template](https://github.com/memorix-ai/memorix-examples/tree/main/templates/chatbot/)** - Production-ready chatbot with memory
+
+#### Quick Start:
+```bash
+# Clone the examples repository
+git clone https://github.com/memorix-ai/memorix-examples.git
+cd memorix-examples
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run a demo
+python demos/01_basic_usage.py
+```
+
+## 🛠️ Development
 
 ### Setup
 
 ```bash
-git clone https://github.com/your-org/memorix-sdk.git
+# Clone the repository
+git clone https://github.com/memorix-ai/memorix-sdk.git
 cd memorix-sdk
-pip install -e .
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Install pre-commit hooks
+pre-commit install
+```
+
+### Common Commands
+
+```bash
+# Run tests
+make test
+
+# Run tests with coverage
+make test-cov
+
+# Format code
+make format
+
+# Run linting
+make lint
+
+# Build package
+make build
+
+# See all available commands
+make help
 ```
 
 ### Running Tests
@@ -128,7 +191,9 @@ python -m pytest tests/
 python examples/basic_usage.py
 ```
 
-## Contributing
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 1. Fork the repository
 2. Create a feature branch
@@ -136,11 +201,11 @@ python examples/basic_usage.py
 4. Add tests
 5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-## Roadmap
+## 🗺️ Roadmap
 
 - [ ] Add more vector store backends (Pinecone, Weaviate, etc.)
 - [ ] Add more embedding models (Cohere, Hugging Face, etc.)
@@ -153,8 +218,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Add memory export/import
 - [ ] Add memory analytics and insights
 
-## Support
+## 📞 Support
 
-- Documentation: [docs.memorix.ai](https://docs.memorix.ai)
-- Issues: [GitHub Issues](https://github.com/your-org/memorix-sdk/issues)
-- Discussions: [GitHub Discussions](https://github.com/your-org/memorix-sdk/discussions) 
+- 📚 **Documentation**: [docs.memorix.ai](https://docs.memorix.ai)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/memorix-ai/memorix-sdk/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/memorix-ai/memorix-sdk/discussions)
+- 📧 **Email**: support@memorix.ai
+
+---
+
+<div align="center">
+
+**Made with ❤️ by the Memorix Team**
+
+[![GitHub stars](https://img.shields.io/github/stars/memorix-ai/memorix-sdk?style=social)](https://github.com/memorix-ai/memorix-sdk)
+[![GitHub forks](https://img.shields.io/github/forks/memorix-ai/memorix-sdk?style=social)](https://github.com/memorix-ai/memorix-sdk)
+
+</div> 

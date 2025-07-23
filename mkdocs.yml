@@ -1,0 +1,98 @@
+site_name: Memorix SDK
+site_description: A flexible memory management system for AI applications
+site_author: Memorix Team
+site_url: https://docs.memorix.ai
+
+repo_name: memorix-ai/memorix-sdk
+repo_url: https://github.com/memorix-ai/memorix-sdk
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [../memorix]
+          options:
+            show_source: true
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - Configuration: getting-started/configuration.md
+  - API Reference:
+    - MemoryAPI: api/memory_api.md
+    - Config: api/config.md
+    - VectorStore: api/vector_store.md
+    - Embedder: api/embedder.md
+    - MetadataStore: api/metadata_store.md
+  - Guides:
+    - Vector Stores: guides/vector_stores.md
+    - Embedding Models: guides/embedding_models.md
+    - Metadata Storage: guides/metadata_storage.md
+    - Best Practices: guides/best_practices.md
+  - Examples:
+    - Basic Usage: examples/basic_usage.md
+    - Advanced Usage: examples/advanced_usage.md
+  - Contributing:
+    - Contributing Guide: contributing/contributing.md
+    - Development Setup: contributing/development.md
+    - Code Style: contributing/code_style.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.arithmatex
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.squares
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/memorix-ai/memorix-sdk
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/memorix_ai
+  version:
+    provider: mike
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY 
