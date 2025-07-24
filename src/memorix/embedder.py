@@ -67,7 +67,7 @@ class OpenAIEmbedder(EmbedderInterface):
         for i in range(0, len(hash_hex), 2):
             if len(embedding) >= 1536:  # OpenAI embedding dimension
                 break
-            hex_pair = hash_hex[i : i + 2]
+            hex_pair = hash_hex[i : i + 2]  # noqa: E203
             embedding.append(float(int(hex_pair, 16)) / 255.0)
 
         # Pad or truncate to 1536 dimensions
@@ -116,7 +116,7 @@ class GeminiEmbedder(EmbedderInterface):
         for i in range(0, len(hash_hex), 2):
             if len(embedding) >= 768:  # Gemini embedding dimension
                 break
-            hex_pair = hash_hex[i : i + 2]
+            hex_pair = hash_hex[i : i + 2]  # noqa: E203
             embedding.append(float(int(hex_pair, 16)) / 255.0)
 
         # Pad or truncate to 768 dimensions
@@ -163,7 +163,7 @@ class SentenceTransformersEmbedder(EmbedderInterface):
         for i in range(0, len(hash_hex), 2):
             if len(embedding) >= 384:  # Common sentence transformer dimension
                 break
-            hex_pair = hash_hex[i : i + 2]
+            hex_pair = hash_hex[i : i + 2]  # noqa: E203
             embedding.append(float(int(hex_pair, 16)) / 255.0)
 
         # Pad or truncate to 384 dimensions

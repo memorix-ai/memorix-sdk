@@ -21,17 +21,17 @@ def main():
     print("Storing memories...")
 
     memory_id1 = memory.store(
-        "Python is a high-level programming language known for its simplicity and readability.",
+        "Python is a high-level programming language known for its simplicity and readability.",  # noqa: E501
         metadata={"topic": "programming", "language": "python"},
     )
 
     memory_id2 = memory.store(
-        "Machine learning is a subset of artificial intelligence that enables computers to learn without being explicitly programmed.",
+        "Machine learning is a subset of artificial intelligence that enables computers to learn without being explicitly programmed.",  # noqa: E501
         metadata={"topic": "AI", "category": "machine learning"},
     )
 
     memory_id3 = memory.store(
-        "Data structures are ways of organizing and storing data for efficient access and modification.",
+        "Data structures are ways of organizing and storing data for efficient access and modification.",  # noqa: E501
         metadata={"topic": "computer science", "category": "data structures"},
     )
 
@@ -70,7 +70,7 @@ def main():
     print(f"\nUpdating memory {memory_id1}...")
     success = memory.update(
         memory_id1,
-        "Python is a high-level, interpreted programming language known for its simplicity, readability, and extensive standard library.",
+        "Python is a high-level, interpreted programming language known for its simplicity, readability, and extensive standard library.",  # noqa: E501
         metadata={"topic": "programming", "language": "python", "updated": True},
     )
 
