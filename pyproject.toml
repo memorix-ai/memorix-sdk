@@ -4,8 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "memorix-ai"
+<<<<<<< Updated upstream
 version = "0.1.1"
 description = "Persistent memory for autonomous AI."
+=======
+version = "0.3.0"
+description = "Hierarchical memory system for AI agents with configurable decay, scoring, and declarative recall"
+>>>>>>> Stashed changes
 authors = [{ name = "Memorix AI", email = "founder@memorix.ai" }]
 license = { text = "Apache-2.0" }
 readme = "README.md"

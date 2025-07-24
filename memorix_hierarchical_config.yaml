@@ -1,0 +1,136 @@
+# Memorix SDK Hierarchical Memory Configuration
+# This file demonstrates the enhanced configuration capabilities for the hierarchical memory system
+
+# Hierarchical Memory Configuration
+memory:
+  # Tier capacities
+  stm_capacity: 100          # Short-term memory capacity
+  mtm_capacity: 1000         # Medium-term memory capacity  
+  ltm_capacity: 100000       # Long-term memory capacity
+  
+  # Default decay settings
+  default_decay_strategy: "exponential"  # Options: exponential, linear, step, none
+  default_decay_rate: 0.1                # Decay rate (0.0 to 1.0)
+  
+  # Default scoring settings
+  default_scoring_strategy: "hybrid"     # Options: frequency, recency, importance, hybrid
+  
+  # Hybrid scoring weights
+  hybrid_weights:
+    frequency: 0.3           # Weight for frequency-based scoring
+    recency: 0.4             # Weight for recency-based scoring
+    importance: 0.3          # Weight for importance-based scoring
+  
+  # Cleanup thresholds (0.0 to 1.0)
+  stm_cleanup_threshold: 0.1  # STM cleanup threshold (most aggressive)
+  mtm_cleanup_threshold: 0.3  # MTM cleanup threshold (moderate)
+  ltm_cleanup_threshold: 0.5  # LTM cleanup threshold (conservative)
+
+# Vector Store Configuration
+vector_store:
+  type: "faiss"              # Options: faiss, qdrant, chroma
+  index_path: "./memorix_index"
+  dimension: 1536            # Embedding dimension
+  
+  # Additional vector store options
+  similarity_threshold: 0.7   # Minimum similarity threshold for retrieval
+  max_results: 100           # Maximum number of results to return
+
+# Embedder Configuration
+embedder:
+  type: "openai"             # Options: openai, gemini, sentence-transformers
+  model: "text-embedding-ada-002"
+  api_key: null              # Set your API key here or use environment variable
+  
+  # Additional embedder options
+  batch_size: 32             # Batch size for embeddings
+  max_retries: 3             # Maximum retry attempts
+  timeout: 30                # Request timeout in seconds
+
+# Metadata Store Configuration
+metadata_store:
+  type: "sqlite"             # Options: sqlite, memory, json
+  database_path: "./memorix_metadata.db"
+  
+  # Additional metadata options
+  auto_backup: true          # Enable automatic backups
+  backup_interval: 3600      # Backup interval in seconds
+
+# Logging and Tracing Configuration
+logging:
+  level: "INFO"              # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Tracing options
+  enable_tracing: true       # Enable operation tracing
+  trace_memory_operations: true    # Trace memory operations
+  trace_tier_migrations: true      # Trace tier migrations
+  trace_decay_calculations: false  # Trace decay calculations (verbose)
+  
+  # Timeline hooks
+  timeline_hooks:
+    - "store"
+    - "retrieve" 
+    - "update"
+    - "delete"
+    - "migrate"
+    - "recall"
+  
+  # Storage limits
+  max_events: 10000          # Maximum number of trace events to store
+  max_timeline_entries: 10000 # Maximum number of timeline entries to store
+
+# Global Settings
+max_memories: 10000          # Maximum total memories across all tiers
+enable_hierarchical_memory: true  # Enable hierarchical memory system
+auto_cleanup: true           # Enable automatic cleanup of expired memories
+cleanup_interval: 300        # Cleanup interval in seconds
+
+# Advanced Configuration Examples
+
+# Example: Custom decay strategies for different memory types
+# memory:
+#   decay_strategies:
+#     conversation:
+#       strategy: "exponential"
+#       rate: 0.05
+#     knowledge:
+#       strategy: "linear" 
+#       rate: 0.01
+#     temporary:
+#       strategy: "step"
+#       rate: 0.2
+
+# Example: Tier-specific scoring weights
+# memory:
+#   tier_weights:
+#     stm: 1.0      # Short-term memories get full weight
+#     mtm: 0.8      # Medium-term memories get 80% weight
+#     ltm: 0.6      # Long-term memories get 60% weight
+
+# Example: Agent-specific configuration
+# agents:
+#   chatbot:
+#     memory:
+#       stm_capacity: 50
+#       default_decay_strategy: "exponential"
+#       default_decay_rate: 0.15
+#   assistant:
+#     memory:
+#       stm_capacity: 200
+#       default_decay_strategy: "linear"
+#       default_decay_rate: 0.05
+
+# Example: Environment-specific settings
+# environments:
+#   development:
+#     logging:
+#       level: "DEBUG"
+#       trace_decay_calculations: true
+#   production:
+#     logging:
+#       level: "WARNING"
+#       trace_decay_calculations: false
+#     memory:
+#       stm_capacity: 50
+#       mtm_capacity: 500 
