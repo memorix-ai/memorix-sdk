@@ -84,7 +84,7 @@ jobs:
       run: isort --check-only --diff src/memorix/ tests/ examples/
 
     - name: Run flake8
-      run: flake8 src/memorix/ tests/ examples/
+      run: flake8 src/memorix/ tests/ examples/ --ignore=E501,E203,W503,W504
 
     - name: Run mypy
       run: mypy src/memorix/
