@@ -43,11 +43,15 @@ class TestMemoryAPI(unittest.TestCase):
     def test_retrieve_multiple(self):
         """Test retrieving multiple memories."""
         # Store multiple memories
-        self.memory.store("Python is a programming language", {"topic": "programming"})
+        self.memory.store(
+            "Python is a programming language", {"topic": "programming"}
+        )
         self.memory.store(
             "Java is another programming language", {"topic": "programming"}
         )
-        self.memory.store("Machine learning is a subset of AI", {"topic": "AI"})
+        self.memory.store(
+            "Machine learning is a subset of AI", {"topic": "AI"}
+        )
 
         # Retrieve memories
         results = self.memory.retrieve("programming", top_k=3)
