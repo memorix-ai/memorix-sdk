@@ -18,16 +18,12 @@ class VectorStoreInterface(ABC):
     """
 
     @abstractmethod
-    def store(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def store(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Store a memory with its embedding."""
         pass
 
     @abstractmethod
-    def search(
-        self, query_embedding: List[float], top_k: int
-    ) -> List[Dict[str, Any]]:
+    def search(self, query_embedding: List[float], top_k: int) -> List[Dict[str, Any]]:
         """Search for similar memories."""
         pass
 
@@ -37,9 +33,7 @@ class VectorStoreInterface(ABC):
         pass
 
     @abstractmethod
-    def update(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def update(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Update an existing memory."""
         pass
 
@@ -56,9 +50,7 @@ class FAISSVectorStore(VectorStoreInterface):
 
     def __init__(self, config: "Config"):
         self.config = config
-        self.index_path = config.get(
-            "vector_store.index_path", "./memorix_index"
-        )
+        self.index_path = config.get("vector_store.index_path", "./memorix_index")
         self.dimension = config.get("vector_store.dimension", 1536)
 
         # In-memory storage for demo purposes
@@ -66,17 +58,13 @@ class FAISSVectorStore(VectorStoreInterface):
         self.contents = {}
         self.ids = []
 
-    def store(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def store(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Store a memory with its embedding."""
         self.embeddings[memory_id] = embedding
         self.contents[memory_id] = content
         self.ids.append(memory_id)
 
-    def search(
-        self, query_embedding: List[float], top_k: int
-    ) -> List[Dict[str, Any]]:
+    def search(self, query_embedding: List[float], top_k: int) -> List[Dict[str, Any]]:
         """Search for similar memories using cosine similarity."""
         if not self.embeddings:
             return []
@@ -109,9 +97,7 @@ class FAISSVectorStore(VectorStoreInterface):
             if memory_id in self.ids:
                 self.ids.remove(memory_id)
 
-    def update(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def update(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Update an existing memory."""
         if memory_id in self.embeddings:
             self.embeddings[memory_id] = embedding
@@ -133,9 +119,7 @@ class FAISSVectorStore(VectorStoreInterface):
             )
         return results
 
-    def _cosine_similarity(
-        self, vec1: List[float], vec2: List[float]
-    ) -> float:
+    def _cosine_similarity(self, vec1: List[float], vec2: List[float]) -> float:
         """Calculate cosine similarity between two vectors."""
         vec1 = np.array(vec1)
         vec2 = np.array(vec2)
@@ -162,17 +146,13 @@ class QdrantVectorStore(VectorStoreInterface):
         self.contents = {}
         self.ids = []
 
-    def store(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def store(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Store a memory with its embedding."""
         self.embeddings[memory_id] = embedding
         self.contents[memory_id] = content
         self.ids.append(memory_id)
 
-    def search(
-        self, query_embedding: List[float], top_k: int
-    ) -> List[Dict[str, Any]]:
+    def search(self, query_embedding: List[float], top_k: int) -> List[Dict[str, Any]]:
         """Search for similar memories."""
         # Placeholder implementation
         return []
@@ -185,9 +165,7 @@ class QdrantVectorStore(VectorStoreInterface):
             if memory_id in self.ids:
                 self.ids.remove(memory_id)
 
-    def update(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def update(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Update an existing memory."""
         if memory_id in self.embeddings:
             self.embeddings[memory_id] = embedding
@@ -227,19 +205,13 @@ class VectorStore:
         elif self.store_type == "qdrant":
             return QdrantVectorStore(self.config)
         else:
-            raise ValueError(
-                f"Unsupported vector store type: {self.store_type}"
-            )
+            raise ValueError(f"Unsupported vector store type: {self.store_type}")
 
-    def store(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def store(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Store a memory with its embedding."""
         self._store.store(memory_id, embedding, content)
 
-    def search(
-        self, query_embedding: List[float], top_k: int
-    ) -> List[Dict[str, Any]]:
+    def search(self, query_embedding: List[float], top_k: int) -> List[Dict[str, Any]]:
         """Search for similar memories."""
         return self._store.search(query_embedding, top_k)
 
@@ -247,9 +219,7 @@ class VectorStore:
         """Delete a memory by ID."""
         self._store.delete(memory_id)
 
-    def update(
-        self, memory_id: str, embedding: List[float], content: str
-    ) -> None:
+    def update(self, memory_id: str, embedding: List[float], content: str) -> None:
         """Update an existing memory."""
         self._store.update(memory_id, embedding, content)
 
