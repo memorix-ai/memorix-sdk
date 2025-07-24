@@ -60,9 +60,9 @@ class FAISSVectorStore(VectorStoreInterface):
         self.dimension = config.get("vector_store.dimension", 1536)
 
         # In-memory storage for demo purposes
-        self.embeddings = {}
-        self.contents = {}
-        self.ids = []
+        self.embeddings: Dict[str, List[float]] = {}
+        self.contents: Dict[str, str] = {}
+        self.ids: List[str] = []
 
     def store(
         self, memory_id: str, embedding: List[float], content: str
@@ -143,7 +143,8 @@ class FAISSVectorStore(VectorStoreInterface):
         if norm1 == 0 or norm2 == 0:
             return 0.0
 
-        return dot_product / (norm1 * norm2)
+        result = dot_product / (norm1 * norm2)
+        return float(result)
 
 
 class QdrantVectorStore(VectorStoreInterface):
@@ -154,9 +155,9 @@ class QdrantVectorStore(VectorStoreInterface):
     def __init__(self, config: "Config"):
         self.config = config
         # Placeholder for Qdrant implementation
-        self.embeddings = {}
-        self.contents = {}
-        self.ids = []
+        self.embeddings: Dict[str, List[float]] = {}
+        self.contents: Dict[str, str] = {}
+        self.ids: List[str] = []
 
     def store(
         self, memory_id: str, embedding: List[float], content: str

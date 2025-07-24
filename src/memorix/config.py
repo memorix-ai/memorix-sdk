@@ -34,7 +34,12 @@ class Config:
         """
         if config_path and Path(config_path).exists():
             with open(config_path, "r") as f:
-                return yaml.safe_load(f)
+                result = yaml.safe_load(f)
+                if result is None:
+                    return self._get_default_config()
+                if isinstance(result, dict):
+                    return result
+                return self._get_default_config()
         else:
             return self._get_default_config()
 

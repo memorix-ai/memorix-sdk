@@ -61,7 +61,7 @@ class OpenAIEmbedder(EmbedderInterface):
         hash_hex = hash_obj.hexdigest()
 
         # Convert hex to list of floats
-        embedding = []
+        embedding: List[float] = []
         for i in range(0, len(hash_hex), 2):
             if len(embedding) >= 1536:  # OpenAI embedding dimension
                 break
@@ -110,7 +110,7 @@ class GeminiEmbedder(EmbedderInterface):
         hash_hex = hash_obj.hexdigest()
 
         # Convert hex to list of floats
-        embedding = []
+        embedding: List[float] = []
         for i in range(0, len(hash_hex), 2):
             if len(embedding) >= 768:  # Gemini embedding dimension
                 break
@@ -155,7 +155,7 @@ class SentenceTransformersEmbedder(EmbedderInterface):
         hash_hex = hash_obj.hexdigest()
 
         # Convert hex to list of floats
-        embedding = []
+        embedding: List[float] = []
         for i in range(0, len(hash_hex), 2):
             if len(embedding) >= 384:  # Common sentence transformer dimension
                 break

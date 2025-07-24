@@ -107,7 +107,9 @@ class SQLiteMetadataStore(MetadataStoreInterface):
         conn.close()
 
         if result:
-            return json.loads(result[0])
+            parsed = json.loads(result[0])
+            if isinstance(parsed, dict):
+                return parsed
         return None
 
     def update(self, memory_id: str, metadata: Dict[str, Any]) -> None:
@@ -142,9 +144,11 @@ class SQLiteMetadataStore(MetadataStoreInterface):
 
         conn.close()
 
-        metadata_dict = {}
+        metadata_dict: Dict[str, Dict[str, Any]] = {}
         for memory_id, metadata_json in results:
-            metadata_dict[memory_id] = json.loads(metadata_json)
+            parsed = json.loads(metadata_json)
+            if isinstance(parsed, dict):
+                metadata_dict[memory_id] = parsed
 
         return metadata_dict
 
@@ -156,7 +160,7 @@ class InMemoryMetadataStore(MetadataStoreInterface):
 
     def __init__(self, config: "Config"):
         self.config = config
-        self.metadata = {}
+        self.metadata: Dict[str, Dict[str, Any]] = {}
 
     def store(self, memory_id: str, metadata: Dict[str, Any]) -> None:
         """Store metadata for a memory."""
@@ -200,9 +204,11 @@ class JSONFileMetadataStore(MetadataStoreInterface):
         if Path(self.file_path).exists():
             try:
                 with open(self.file_path, "r") as f:
-                    return json.load(f)
+                    result = json.load(f)
+                    if isinstance(result, dict):
+                        return result
             except (json.JSONDecodeError, FileNotFoundError):
-                return {}
+                pass
         return {}
 
     def _save_metadata(self) -> None:
