@@ -99,7 +99,8 @@ class SQLiteMetadataStore(MetadataStoreInterface):
         cursor = conn.cursor()
 
         cursor.execute(
-            "SELECT metadata_json FROM metadata WHERE memory_id = ?", (memory_id,)  # noqa: E501
+            "SELECT metadata_json FROM metadata WHERE memory_id = ?",
+            (memory_id,),  # noqa: E501
         )
         result = cursor.fetchone()
 
@@ -124,7 +125,9 @@ class SQLiteMetadataStore(MetadataStoreInterface):
         conn = sqlite3.connect(self.database_path)
         cursor = conn.cursor()
 
-        cursor.execute("DELETE FROM metadata WHERE memory_id = ?", (memory_id,))  # noqa: E501
+        cursor.execute(
+            "DELETE FROM metadata WHERE memory_id = ?", (memory_id,)
+        )  # noqa: E501
 
         conn.commit()
         conn.close()
@@ -254,7 +257,9 @@ class MetadataStore:
         elif self.store_type == "json":
             return JSONFileMetadataStore(self.config)
         else:
-            raise ValueError(f"Unsupported metadata store type: {self.store_type}")  # noqa: E501
+            raise ValueError(
+                f"Unsupported metadata store type: {self.store_type}"
+            )  # noqa: E501
 
     def store(self, memory_id: str, metadata: Dict[str, Any]) -> None:
         """Store metadata for a memory."""
