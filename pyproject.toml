@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "memorix-ai"
-version = "0.1.0"
-description = "The memory layer for AI agents"
+version = "0.1.1"
+description = "Persistent memory for autonomous AI."
 authors = [{ name = "Memorix AI", email = "founder@memorix.ai" }]
 license = { text = "Apache-2.0" }
 readme = "README.md"
