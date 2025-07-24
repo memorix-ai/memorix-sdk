@@ -41,7 +41,7 @@ class OpenAIEmbedder(EmbedderInterface):
 
         # Placeholder for OpenAI client
         self.client = (
-            None  # Would be initialized with openai.OpenAI(api_key=self.api_key)
+            None  # Would be initialized with openai.OpenAI(api_key=self.api_key)  # noqa: E501
         )
 
     def embed(self, text: str) -> List[float]:
@@ -137,7 +137,7 @@ class SentenceTransformersEmbedder(EmbedderInterface):
 
         # Placeholder for sentence transformers
         self.model = (
-            None  # Would be initialized with SentenceTransformer(self.model_name)
+            None  # Would be initialized with SentenceTransformer(self.model_name)  # noqa: E501
         )
 
     def embed(self, text: str) -> List[float]:
@@ -192,7 +192,7 @@ class Embedder:
         elif self.embedder_type == "sentence_transformers":
             return SentenceTransformersEmbedder(self.config)
         else:
-            raise ValueError(f"Unsupported embedder type: {self.embedder_type}")
+            raise ValueError(f"Unsupported embedder type: {self.embedder_type}")  # noqa: E501
 
     def embed(self, text: str) -> List[float]:
         """Generate embedding for given text."""

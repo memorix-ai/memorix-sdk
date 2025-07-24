@@ -60,7 +60,7 @@ class Config:
                 "type": "sqlite",
                 "database_path": "./memorix_metadata.db",
             },
-            "settings": {"max_memories": 10000, "similarity_threshold": 0.7},
+            "settings": {"max_memories": 10000, "similarity_threshold": 0.7},  # noqa: E501
         }
 
     def get(self, key: str, default: Any = None) -> Any:

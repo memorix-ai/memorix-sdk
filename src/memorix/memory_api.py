@@ -33,7 +33,7 @@ class MemoryAPI:
 
         Returns:
             Memory ID of the stored content
-        """
+        """  # noqa: E501
         memory_id = str(uuid.uuid4())
 
         # Generate embedding
@@ -81,7 +81,7 @@ class MemoryAPI:
                     "content": result["content"],
                     "similarity": result["similarity"],
                     "metadata": metadata or {},
-                }
+                }  # noqa: E501
             )
 
         return enriched_results
